@@ -25,11 +25,13 @@ public class Joueur : MonoBehaviour
         }
 
         Vector2 input = new Vector2(x, z);
-        Gamepad gamepad = Gamepad.current;
-        if (input == Vector2.zero && gamepad != null)
-        {
-            input = gamepad.leftStick.ReadValue();
-        }
+
+        // Jouer avec une manette
+        // Gamepad gamepad = Gamepad.current;
+        // if (input == Vector2.zero && gamepad != null)
+        // {
+        //     input = gamepad.leftStick.ReadValue();
+        // }
 
         Vector3 move = new Vector3(input.x, 0, input.y);
         transform.Translate(move * speed * Time.deltaTime);
