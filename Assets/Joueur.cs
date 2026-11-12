@@ -1,8 +1,13 @@
 using UnityEngine;
 
-public class NewEmptyCSharpScript : MonoBehaviour
+public class Joueur : MonoBehaviour
 {
     public float speed = 5f;
+
+    void Start()
+    {
+        Debug.Log("Le joueur devrait mtn se déplacer.");
+    }
 
     void Update()
     {
