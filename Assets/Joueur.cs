@@ -35,5 +35,7 @@ public class Joueur : MonoBehaviour
 
         Vector3 move = new Vector3(input.x, 0, input.y);
         transform.Translate(move * speed * Time.deltaTime);
+
+        
     }
 }
