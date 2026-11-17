@@ -20,4 +20,9 @@ public class suivreJoueur : MonoBehaviour
         );
         transform.LookAt(Joueur);
     }
+
+    
+    
 }
+
+

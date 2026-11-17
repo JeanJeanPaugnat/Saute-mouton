@@ -36,6 +36,33 @@ public class Joueur : MonoBehaviour
         Vector3 move = new Vector3(input.x, 0, input.y);
         transform.Translate(move * speed * Time.deltaTime);
 
-        
+
+    }
+
+    public int points = 0;
+    public int vies = 3;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Bonus"))
+        {
+            Valeur valeur = other.GetComponent<Valeur>();
+            int gain = 1;
+
+            if(valeur != null){
+                gain = valeur + points
+            }
+            points = points + gain;
+            Debug.Log("Points: " + points);
+            Destroy(other.gameObject);
+        }
+        if(other.CompareTag("Danger"))
+        {
+            vies --;
+            Debug.Log("Vies: " + vies);
+            Destroy(other.gameObject);
+        }
     }
 }
+
+
